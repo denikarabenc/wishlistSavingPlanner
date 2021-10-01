@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WishlistSavingPlanner.Models.Browser;
 using WishlistSavingPlanner.Models.Wishlist;
 
 namespace WishlistSavingPlanner.ViewModels
 {
     public class MainWindowViewModel
     {
-        private List<WishlistItem> wishlistItemList;
+        private List<WishlistBrowserModel> wishlistBrowserItemList;
         public MainWindowViewModel()
         {
-            wishlistItemList = new List<WishlistItem>();
-            wishlistItemList.Add(new WishlistItem("Test name", "Test link", "Test url", 100));
+            wishlistBrowserItemList = new List<WishlistBrowserModel>();
+            wishlistBrowserItemList.Add(new WishlistBrowserModel(new WishlistItem("Test name", "Test link", "Test url", 100), DateTime.Now));
         }
 
-        public List<WishlistItem> WishlistItemList
+        public List<WishlistBrowserModel> WishlistBrowserItemList
         {
-            get => wishlistItemList;
+            get => wishlistBrowserItemList;
             set
             {
-                wishlistItemList = value;
+                wishlistBrowserItemList = value;
             }
         }
     }

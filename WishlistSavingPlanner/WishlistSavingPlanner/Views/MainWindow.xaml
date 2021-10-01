@@ -8,7 +8,11 @@
         mc:Ignorable="d"
         Title="Wishlist saving planner" Height="450" Width="800">
     <Grid>
-        <TextBlock>Welcome to the wishlist saving planner</TextBlock>
-        <userControls:WishlistDataGrid/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0">Welcome to the wishlist saving planner</TextBlock>
+        <userControls:WishlistDataGrid Grid.Row="1" Margin="5"/>
     </Grid>
 </Window>

@@ -6,20 +6,20 @@ namespace WishlistSavingPlanner.Models.Wishlist
     {
         private string name;
         private string link;
-        private string imageURL;
+        private string priority;
         private int price;
 
-        public WishlistItem(string name, string link, string imageURL, int price)
+        public WishlistItem(string name, string link, string priority, int price)
         {
             this.name = name;
             this.link = link;
-            this.imageURL = imageURL;
+            this.priority = priority;
             this.price = price;
         }
 
         public string Name { get => name; set => name = value; }
         public string Link { get => link; set => link = value; }
-        public string ImageURL { get => imageURL; set => imageURL = value; }
+        public string Priority { get => priority; set => priority = value; }
         public int Price { get => price;
             set 
             { 

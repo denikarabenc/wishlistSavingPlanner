@@ -11,16 +11,45 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <DataGrid ItemsSource="{Binding WishlistItemList}" AutoGenerateColumns="False">
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Margin="2,0">Priority</Label>
+            <TextBox Grid.Row="1" Grid.Column="0" Margin="2,2" Text="{Binding Path=Priority, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Row="0" Grid.Column="1" Margin="2,0">Name</Label>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="2,2" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Row="0" Grid.Column="2" Margin="2,0">Link</Label>
+            <TextBox Grid.Row="1" Grid.Column="2" Margin="2,2" Text="{Binding Path=Link, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Row="0" Grid.Column="3" Margin="2,0">Price</Label>
+            <TextBox Grid.Row="1" Grid.Column="3" Margin="2,2" Text="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Margin="2,2">Add to list</Button>
+        </Grid>
+
+        <DataGrid Margin="2,10,2,0" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding WishlistBrowserItemList}" SelectedItem="{Binding SelectedWishlistItem}" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Link" Binding="{Binding Link}"/>
-                <DataGridTextColumn Header="URL" Binding="{Binding ImageURL}"/>
-                <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Priority" Binding="{Binding WishlistItem.Priority}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding WishlistItem.Name}"/>
+                <DataGridTextColumn Header="Link" Binding="{Binding WishlistItem.Link}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding WishlistItem.Price}"/>
+                <DataGridTextColumn Header="Date when available" Binding="{Binding AvailableToPurchaseDate}"/>
             </DataGrid.Columns>
         </DataGrid>
+
+       
     </Grid>
 </UserControl>
