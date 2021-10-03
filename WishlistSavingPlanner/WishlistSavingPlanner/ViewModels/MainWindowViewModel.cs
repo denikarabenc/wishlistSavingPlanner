@@ -22,7 +22,7 @@ namespace WishlistSavingPlanner.ViewModels
         private int wishlistPrice;
         private string? wishlistName;
         private string? wishlistLink;
-        private string? wishlistPriority;
+        private int wishlistPriority = 1;
 
         private ICommand? addButtonClick;
         private ICommand? removeButtonClick;
@@ -72,7 +72,7 @@ namespace WishlistSavingPlanner.ViewModels
         public int WishlistPrice { get => wishlistPrice; set => wishlistPrice = value; }
         public string? WishlistName { get => wishlistName; set => wishlistName = value; }
         public string? WishlistLink { get => wishlistLink; set => wishlistLink = value; }
-        public string? WishlistPriority { get => wishlistPriority; set => wishlistPriority = value; }
+        public int WishlistPriority { get => wishlistPriority; set => wishlistPriority = value; }
         public WishlistBrowserModel? SelectedWishlistItem { get => selectedWishlistItem; set => selectedWishlistItem = value; }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -84,7 +84,7 @@ namespace WishlistSavingPlanner.ViewModels
 
         private void OpenIncomeAndExpensesButtonWindow()
         {
-            IncomeAndExpensesViewModel incomeAndExpensesViewModel = new IncomeAndExpensesViewModel();
+            IncomeAndExpensesViewModel incomeAndExpensesViewModel = new();
             IncomeAndExpensesWindow setupWindow = new IncomeAndExpensesWindow(incomeAndExpensesViewModel);
             setupWindow.ShowDialog();
         }
@@ -144,7 +144,15 @@ namespace WishlistSavingPlanner.ViewModels
                     {
                         using (StreamReader reader = new StreamReader(isoStream))
                         {
-                            return JsonSerializer.Deserialize<ObservableCollection<WishlistBrowserModel>>(reader.ReadToEnd()) ?? new ObservableCollection<WishlistBrowserModel>();
+                            try
+                            {
+                                return JsonSerializer.Deserialize<ObservableCollection<WishlistBrowserModel>>(reader.ReadToEnd()) ?? new ObservableCollection<WishlistBrowserModel>();
+                            }
+                            catch(Exception ex)
+                            {
+                                Console.WriteLine(ex.Message); //TODO replace this with logger
+                                return new ObservableCollection<WishlistBrowserModel>();
+                            }
                         }
                     }
                 }
