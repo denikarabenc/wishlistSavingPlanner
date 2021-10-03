@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\App.xaml
-2640139850
+32055647730
 
-121997047661
+16-1676553666
 1941286356809
-UserControls\WishlistDataGrid.xaml;Views\MainWindow.xaml;
+UserControls\WishlistDataGrid.xaml;Views\IncomeAndExpensesWindow.xaml;Views\MainWindow.xaml;
 
 False
 

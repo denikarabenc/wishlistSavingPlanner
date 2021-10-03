@@ -13,20 +13,22 @@ using System.Windows.Input;
 using WishlistSavingPlanner.Core.Command;
 using WishlistSavingPlanner.Models.Browser;
 using WishlistSavingPlanner.Models.Wishlist;
+using WishlistSavingPlanner.Views;
 
 namespace WishlistSavingPlanner.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         private int wishlistPrice;
-        private string wishlistName;
-        private string wishlistLink;
-        private string wishlistPriority;
+        private string? wishlistName;
+        private string? wishlistLink;
+        private string? wishlistPriority;
 
-        private ICommand addButtonClick;
-        private ICommand removeButtonClick;
+        private ICommand? addButtonClick;
+        private ICommand? removeButtonClick;
+        private ICommand? setupIncomeAndExpensesButtonClick;
 
-        private WishlistBrowserModel selectedWishlistItem;
+        private WishlistBrowserModel? selectedWishlistItem;
 
         private ObservableCollection<WishlistBrowserModel> wishlistBrowserItemList;
 
@@ -52,6 +54,12 @@ namespace WishlistSavingPlanner.ViewModels
             get => removeButtonClick ?? (removeButtonClick = new RelayCommand(param => RemoveWishlistItem(), param => CanRemoveWishlistItem()));
         }
 
+        public ICommand SetupIncomeAndExpensesButtonClick
+        {
+            get => setupIncomeAndExpensesButtonClick ?? (setupIncomeAndExpensesButtonClick = new RelayCommand(param => OpenIncomeAndExpensesButtonWindow()));
+        }
+        
+
         public ObservableCollection<WishlistBrowserModel> WishlistBrowserItemList
         {
             get => wishlistBrowserItemList;
@@ -62,10 +70,10 @@ namespace WishlistSavingPlanner.ViewModels
         }
 
         public int WishlistPrice { get => wishlistPrice; set => wishlistPrice = value; }
-        public string WishlistName { get => wishlistName; set => wishlistName = value; }
-        public string WishlistLink { get => wishlistLink; set => wishlistLink = value; }
-        public string WishlistPriority { get => wishlistPriority; set => wishlistPriority = value; }
-        public WishlistBrowserModel SelectedWishlistItem { get => selectedWishlistItem; set => selectedWishlistItem = value; }
+        public string? WishlistName { get => wishlistName; set => wishlistName = value; }
+        public string? WishlistLink { get => wishlistLink; set => wishlistLink = value; }
+        public string? WishlistPriority { get => wishlistPriority; set => wishlistPriority = value; }
+        public WishlistBrowserModel? SelectedWishlistItem { get => selectedWishlistItem; set => selectedWishlistItem = value; }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -74,9 +82,19 @@ namespace WishlistSavingPlanner.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+        private void OpenIncomeAndExpensesButtonWindow()
+        {
+            IncomeAndExpensesViewModel incomeAndExpensesViewModel = new IncomeAndExpensesViewModel();
+            IncomeAndExpensesWindow setupWindow = new IncomeAndExpensesWindow(incomeAndExpensesViewModel);
+            setupWindow.ShowDialog();
+        }
+
         private void RemoveWishlistItem()
         {
-            WishlistBrowserItemList.Remove(SelectedWishlistItem);
+            if (selectedWishlistItem != null)
+            {
+                WishlistBrowserItemList.Remove(SelectedWishlistItem);
+            }
         }
 
         private bool CanRemoveWishlistItem()

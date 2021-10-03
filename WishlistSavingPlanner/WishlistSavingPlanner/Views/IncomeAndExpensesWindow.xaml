@@ -1,0 +1,19 @@
+﻿<Window x:Class="WishlistSavingPlanner.Views.IncomeAndExpensesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WishlistSavingPlanner.Views"
+        mc:Ignorable="d"
+        Title="Income and expenses setup" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem DataContext="{Binding IncomeViewModel}" Header="Income">
+                <TextBlock Text="{Binding Title}"/>
+            </TabItem>
+            <TabItem DataContext="{Binding ExpensesViewModel}" Header="Expenses">
+                <TextBlock Text="{Binding Title}"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
