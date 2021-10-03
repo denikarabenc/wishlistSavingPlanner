@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
 using WishlistSavingPlanner.Models.Wishlist;
 
 namespace WishlistSavingPlanner.Models.Browser
 {
-    public class WishlistBrowserModel
+    public class WishlistBrowserModel : INotifyPropertyChanged
     {
         private WishlistItem wishlistItem;
         private DateTime availableToPurchaseDate;
@@ -16,8 +13,29 @@ namespace WishlistSavingPlanner.Models.Browser
             this.wishlistItem = wishlistItem;
             this.availableToPurchaseDate = availableToPurchaseDate;
         }
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-        public DateTime AvailableToPurchaseDate { get => availableToPurchaseDate; set => availableToPurchaseDate = value; }
-        public WishlistItem WishlistItem { get => wishlistItem; set => wishlistItem = value; }
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+        public DateTime AvailableToPurchaseDate
+        {
+            get => availableToPurchaseDate;
+            set
+            {
+                availableToPurchaseDate = value;
+                OnPropertyChanged(nameof(AvailableToPurchaseDate));
+            }
+        }
+        public WishlistItem WishlistItem
+        {
+            get => wishlistItem;
+            set
+            {
+                wishlistItem = value;
+                OnPropertyChanged(nameof(WishlistItem));
+            }
+        }
     }
 }
