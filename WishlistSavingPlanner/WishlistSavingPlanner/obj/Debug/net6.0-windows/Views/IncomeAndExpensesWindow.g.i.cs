@@ -53,7 +53,7 @@ namespace WishlistSavingPlanner.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WishlistSavingPlanner;component/views/incomeandexpenseswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WishlistSavingPlanner;V1.0.0.0;component/views/incomeandexpenseswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\IncomeAndExpensesWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

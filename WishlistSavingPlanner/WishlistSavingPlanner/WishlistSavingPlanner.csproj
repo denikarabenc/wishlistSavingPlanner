@@ -23,8 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UserControls\IncomeAndExenses\Income\" />
-    <Folder Include="UserControls\IncomeAndExenses\Expenses\" />
+    <Folder Include="Views\IncomeAndExpensesViews\IncomeViews\" />
   </ItemGroup>
 
 </Project>

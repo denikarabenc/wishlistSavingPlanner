@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="WishlistSavingPlanner.Views.UserControls.IncomeAndExenses.Income.IncomeTabUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WishlistSavingPlanner.Views.UserControls.IncomeAndExenses.Income"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Margin="2,0" HorizontalAlignment="Left">Income name: </Label>
+                <TextBox Grid.Row="0" Grid.Column="1" Margin="2,2" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Row="0" Grid.Column="2" Margin="2,0" HorizontalAlignment="Left">Income amount: </Label>
+                <TextBox Grid.Row="0" Grid.Column="3" Margin="2,2" Text="{Binding Path=Amount, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Row="1" Grid.Column="0" Margin="2,0" HorizontalAlignment="Left">Income date:</Label>
+                <DatePicker Grid.Row="1" Grid.Column="1" SelectedDate="{Binding DateOccure}" />
+                <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left">Income repeat</Label>
+                <ComboBox Grid.Row="1" Grid.Column="3" SelectedItem="{Binding SelectedRate}" ItemsSource="{Binding CashflowRates}" />
+                <Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="2,2" Command="{Binding AddButtonClick}">Add to list</Button>
+            </Grid>
+
+            <DataGrid Margin="2,10,2,0" Grid.Column="0" Grid.Row="1" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding CashflowItems}" SelectedItem="{Binding SelectedCashflowItem}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Amount}"/>
+                    <DataGridTextColumn Header="Date of first occurance" Binding="{Binding DateOccure}"/>
+                    <DataGridTextColumn Header="Repeat rate" Binding="{Binding RepeatRate}"/>
+                    
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button Grid.Row="3" Grid.Column="3" HorizontalAlignment="Right" Margin="2,2" Command="{Binding RemoveButtonClick}">Remove from list</Button>
+
+
+        </Grid>
+    </Grid>
+</UserControl>

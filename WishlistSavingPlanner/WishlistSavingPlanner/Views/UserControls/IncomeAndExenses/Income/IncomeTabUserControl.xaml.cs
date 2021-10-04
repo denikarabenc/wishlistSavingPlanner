@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WishlistSavingPlanner.UserControls
+namespace WishlistSavingPlanner.Views.UserControls.IncomeAndExenses.Income
 {
     /// <summary>
-    /// Interaction logic for WishlistDataGrid.xaml
+    /// Interaction logic for IncomeTabUserControl.xaml
     /// </summary>
-    public partial class WishlistDataGrid : UserControl
+    public partial class IncomeTabUserControl : UserControl
     {
-        public WishlistDataGrid()
+        public IncomeTabUserControl()
         {
             InitializeComponent();
         }

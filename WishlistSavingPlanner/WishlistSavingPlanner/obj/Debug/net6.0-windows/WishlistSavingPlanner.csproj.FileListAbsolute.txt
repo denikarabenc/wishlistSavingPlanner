@@ -20,7 +20,11 @@ D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\Wishl
 D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\WishlistSavingPlanner.pdb
 D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\WishlistSavingPlanner.genruntimeconfig.cache
 D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
-D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\UserControls\WishlistDataGrid.g.cs
-D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\UserControls\WishlistDataGrid.baml
-D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\Views\IncomeAndExpensesWindow.g.cs
-D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\Views\IncomeAndExpensesWindow.baml
+D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\Views\UserControls\WishlistDataGrid.baml
+D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\Views\IncomeAndExpensesViews\IncomeAndExpensesWindow.g.cs
+D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\Views\UserControls\WishlistDataGrid.g.cs
+D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\Views\IncomeAndExpensesViews\IncomeAndExpensesWindow.baml
+D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\Views\UserControls\IncomeAndExenses\Income\IncomeTabUserControl.g.cs
+D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\Views\UserControls\IncomeAndExenses\Income\IncomeTabUserControl.baml
+D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\Views\UserControls\IncomeAndExenses\Expenses\ExpenseTabUserControl.g.cs
+D:\Projects\Visual Studio 2022\wishlistSavingPlanner\WishlistSavingPlanner\WishlistSavingPlanner\obj\Debug\net6.0-windows\Views\UserControls\IncomeAndExenses\Expenses\ExpenseTabUserControl.baml

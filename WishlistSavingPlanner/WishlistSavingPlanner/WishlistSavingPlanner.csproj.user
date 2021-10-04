@@ -7,18 +7,30 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="UserControls\WishlistDataGrid.xaml.cs">
+    <Compile Update="Views\UserControls\IncomeAndExenses\Expenses\ExpenseTabUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\IncomeAndExpensesWindow.xaml.cs">
+    <Compile Update="Views\UserControls\IncomeAndExenses\Income\IncomeTabUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControls\WishlistDataGrid.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\IncomeAndExpensesViews\IncomeAndExpensesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="UserControls\WishlistDataGrid.xaml">
+    <Page Update="Views\UserControls\IncomeAndExenses\Expenses\ExpenseTabUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\IncomeAndExpensesWindow.xaml">
+    <Page Update="Views\UserControls\IncomeAndExenses\Income\IncomeTabUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\WishlistDataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\IncomeAndExpensesViews\IncomeAndExpensesWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">

@@ -21,7 +21,7 @@ namespace WishlistSavingPlanner.Views
     /// </summary>
     public partial class IncomeAndExpensesWindow : Window
     {
-        private IncomeAndExpensesViewModel viewModel = new IncomeAndExpensesViewModel();
+        private IncomeAndExpensesViewModel viewModel;
         public IncomeAndExpensesWindow(IncomeAndExpensesViewModel viewModel)
         {
             viewModel.ThrowIfNull(nameof(viewModel));
